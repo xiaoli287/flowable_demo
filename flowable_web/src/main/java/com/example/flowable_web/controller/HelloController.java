@@ -152,7 +152,7 @@ public class HelloController {
         List<FinishedTaskVO> taskVOS = new ArrayList<>();
         for(HistoricTaskInstance task : list){
             //流程的变量
-            Map<String,Object> variables = runtimeService.getVariables(task.getExecutionId());
+            Map<String,Object> variables = runtimeService.getVariables(task.getProcessInstanceId());
             FinishedTaskVO vo = new FinishedTaskVO();
             vo.setId(task.getId());
             vo.setName(task.getName());
